@@ -1,6 +1,6 @@
 ﻿/* Author: Jared Gaynor
  * Class: AretineAppleJuice.cs
- * Purpose: Is a model for information about an order of Aretine Apple Juice.
+ * Purpose: Is a model for information about an order of Arentino Apple Juice.
  */
 
 using BleakwindBuffet.Data.Enums;
@@ -11,9 +11,9 @@ using System.Text;
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
-    /// Holds information about an order of Aretine Apple Juice
+    /// Holds information about an order of Arentino Apple Juice
     /// </summary>
-    class AretineAppleJuice
+    class ArentinoAppleJuice
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.
@@ -160,7 +160,7 @@ namespace BleakwindBuffet.Data.Drinks
                     break;
             }
 
-            return (sizeStr + " Aretine Apple Juice");
+            return (sizeStr + " Arentino Apple Juice");
         }
     }
 }
