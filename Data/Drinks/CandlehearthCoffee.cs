@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Holds information about an order of Candlehearth Coffee
     /// </summary>
-    class CandlehearthCoffee
+    public class CandlehearthCoffee
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

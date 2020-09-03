@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Holds information about an order of the Briarheart Burger.
     /// </summary>
-    class BriarheartBurger
+    public class BriarheartBurger
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

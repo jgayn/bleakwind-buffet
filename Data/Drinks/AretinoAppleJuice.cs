@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Holds information about an order of Arentino Apple Juice
     /// </summary>
-    class ArentinoAppleJuice
+    public class AretinoAppleJuice
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

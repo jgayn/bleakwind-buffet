@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Holds information for an order of Mad Otar Grits.
     /// </summary>
-    class DragonBornWaffleFries
+    public class DragonBornWaffleFries
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

@@ -15,7 +15,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Holds information about an order of the Philly Poacher.
     /// </summary>
-    class PhillyPoacher
+    public class PhillyPoacher
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

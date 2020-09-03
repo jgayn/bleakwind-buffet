@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Holds information about an order of Markarth's Milk.
     /// </summary>
-    class MarkarthMilk
+    public class MarkarthMilk
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

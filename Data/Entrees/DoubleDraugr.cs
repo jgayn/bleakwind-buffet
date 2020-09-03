@@ -12,7 +12,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Holds information about an order of the Double Draugr.
     /// </summary>
-    class DoubleDraugr
+    public class DoubleDraugr
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

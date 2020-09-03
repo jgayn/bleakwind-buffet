@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Holds information about an order of the Smokehouse Skeleton.
     /// </summary>
-    class SmokehouseSkeleton
+    public class SmokehouseSkeleton
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

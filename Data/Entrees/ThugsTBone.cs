@@ -12,7 +12,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Holds information about an order of the Thug's T-Bone.
     /// </summary>
-    class ThugsTBone
+    public class ThugsTBone
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

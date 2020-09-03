@@ -9,7 +9,7 @@ namespace BleakwindBuffet.Data.Enums
     /// <summary>
     /// Provides available sizes
     /// </summary>
-    public enum Size
+    public public enum Size
     {
         Small,
         Medium,

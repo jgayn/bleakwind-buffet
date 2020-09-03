@@ -13,7 +13,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Holds information about an order of Warrior Water
     /// </summary>
-    class WarriorWater
+    public class WarriorWater
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

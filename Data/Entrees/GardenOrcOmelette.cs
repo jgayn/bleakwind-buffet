@@ -12,7 +12,7 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Holds information about an order of the Garden Orc Omelette.
     /// </summary>
-    class GardenOrcOmelette
+    public class GardenOrcOmelette
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.
