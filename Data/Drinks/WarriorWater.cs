@@ -18,16 +18,28 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
+
+        /// <value>Stores whether ice is in the drink</value>
         private bool ice = true;
+
+        /// <value>Stores whether lemon is in the drink</value>
         private bool lemon = false;
+
+        /// <value> Stores and initializes the size of the drink to small </value>
         private Size size = Size.Small;
+
+        /// <value> Stores and initializes special instructions for the order to an empty list </value>
         private List<string> specialinstructions = new List<string>();
+
+        /// <value> Stores and initializes the price of the drink to that of a small </value>
         private double price = 0;
+
+        /// <value> Stores and initializes the calories of the drink ot that of a small </value>
         private uint calories = 0;
 
-        /// <summary>
+        /// <value>
         /// Gets/sets whether the customer wants ice in their water.
-        /// </summary>
+        /// </value>
         public bool Ice
         {
             get { return ice; }
@@ -39,9 +51,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets/sets whether the customer wants lemon in their water.
-        /// </summary>
+        /// </value>
         public bool Lemon
         {
             get { return lemon; }
@@ -53,21 +65,21 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
-        /// Gets/sets what size coffee the customer wants.
-        /// </summary>
+        /// <value>
+        /// Gets/sets what size drink the customer wants.
+        /// </value>
         public Size Size
         {
             get { return size; }
             set
             {
-                Size = value;
+                size = value;
             }
         }
-        
-        /// <summary>
+
+        /// <value>
         /// Price should always be 0, but added a set just in case.
-        /// </summary>
+        /// </value>
         public double Price
         {
             get { return price; }
@@ -77,9 +89,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Calories should always be 0, but added a set just in case.
-        /// </summary>
+        /// </value>
         public uint Calories
         {
             get { return calories; }
@@ -89,9 +101,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Allows us to get/set the list of special instructions.
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get { return specialinstructions; }

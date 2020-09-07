@@ -20,17 +20,29 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
+
+        /// <value> Stores and initializes the price of the meal. </value>
         private double price = 7.23;
+
+        /// <value> Stores and initializes the calories of the meal. </value>
         private uint calories = 784;
+
+        /// <value> Stores and initializes special instructions for the order to an empty list </value>
         private List<string> specialinstructions = new List<string>();
+
+        /// <value> Stores and initializes whether sirloin is included in the order to true. </value>
         private bool sirloin = true;
+
+        /// <value> Stores and initializes whether onion is included in the order to true. </value>
         private bool onions = true;
+
+        /// <value> Stores and initializes whether a roll is included in the order to true. </value>
         private bool roll = true;
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants sirloin steak.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Sirloin
         {
             get { return sirloin; }
@@ -42,10 +54,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants onions.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Onions
         {
             get { return onions; }
@@ -57,10 +69,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants a roll.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Roll
         {
             get { return roll; }
@@ -72,25 +84,25 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property to return the price of this entree.
-        /// </summary>
+        /// </value>
         public double Price
         {
             get { return price; }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property to return the amount of calories in this entree.
-        /// </summary>
+        /// </value>
         public uint Calories
         {
             get { return calories; }
         }
 
-        /// <summary>
+        /// <value>
         /// Returns a list of special instructions the customer can give.
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get { return specialinstructions; }

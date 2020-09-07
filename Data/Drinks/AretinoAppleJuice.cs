@@ -18,15 +18,25 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
+
+        /// <value> Stores and initializes whether the drink has ice to false </value>
         private bool ice = false;
+
+        /// <value> Stores and initializes the size of the drink to small </value>
         private Size size = Size.Small;
+
+        /// <value> Stores and initializes special instructions for the order to an empty list </value>
         private List<string> specialinstructions = new List<string>();
+
+        /// <value> Stores and initializes the price of the drink to that of a small </value>
         private double price = 0.62;
+
+        /// <value> Stores and initializes the calories of the drink ot that of a small </value>
         private uint calories = 44;
 
-        /// <summary>
+        /// <value>
         /// Gets/sets whether the customer wants ice in their juice.
-        /// </summary>
+        /// </value>
         public bool Ice
         {
             get { return ice; }
@@ -38,21 +48,21 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets/sets what size of juice the customer wants.
-        /// </summary>
+        /// </value>
         public Size Size
         {
             get { return size; }
             set
             {
-                Size = value;
+                size = value;
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets the price or sets price depending on the size of the drink.
-        /// </summary>
+        /// </value>
         public double Price
         {
             get {
@@ -88,9 +98,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets the calories or sets calories based on the size of the drink.
-        /// </summary>
+        /// </value>
         public uint Calories
         {
             get
@@ -127,9 +137,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Allows us to get/set the list of special instructions.
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get { return specialinstructions; }
@@ -160,7 +170,7 @@ namespace BleakwindBuffet.Data.Drinks
                     break;
             }
 
-            return (sizeStr + " Arentino Apple Juice");
+            return (sizeStr + " Aretino Apple Juice");
         }
     }
 }

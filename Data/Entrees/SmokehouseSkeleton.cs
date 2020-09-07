@@ -18,18 +18,32 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
+
+        /// <value> Stores and initializes whether sausage is included in the order to true. </value>
         private bool sausagelink = true;
+
+        /// <value> Stores and initializes whether egg is included in the order to true. </value>
         private bool egg = true;
+
+        /// <value> Stores and initializes whether hashbrowns are included in the order to true. </value>
         private bool hashbrowns = true;
+
+        /// <value> Stores and initializes whether pancakes are included in the order to true. </value>
         private bool pancake = true;
+
+        /// <value> Stores and initializes the price of the meal. </value>
         private double price = 5.62;
+
+        /// <value> Stores and initializes the calories of the meal. </value>
         private uint calories = 602;
+
+        /// <value> Stores and initializes special instructions for the order to an empty list </value>
         private List<string> specialinstructions = new List<string>();
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants sausage.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool SausageLink
         {
             get { return sausagelink; }
@@ -41,10 +55,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants eggs.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Egg
         {
             get { return egg; }
@@ -56,10 +70,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants hash browns.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool HashBrowns
         {
             get { return hashbrowns; }
@@ -71,10 +85,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants pancakes.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Pancake
         {
             get { return pancake; }
@@ -86,25 +100,25 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property to return the price of this entree.
-        /// </summary>
+        /// </value>
         public double Price
         {
             get { return price; }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property to return the amount of calories in this entree.
-        /// </summary>
+        /// </value>
         public uint Calories
         {
             get { return calories; }
         }
 
-        /// <summary>
+        /// <value>
         /// Returns a list of special instructions the customer can give.
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get { return specialinstructions; }

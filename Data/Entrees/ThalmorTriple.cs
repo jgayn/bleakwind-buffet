@@ -17,24 +17,50 @@ namespace BleakwindBuffet.Data.Entrees
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
+
+        /// <value> Stores and initializes whether a bun is included in the order to true. </value>
         private bool bun = true;
+
+        /// <value> Stores and initializes whether ketchup is included in the order to true. </value>
         private bool ketchup = true;
+
+        /// <value> Stores and initializes whether mustard is included in the order to true. </value>
         private bool mustard = true;
+
+        /// <value> Stores and initializes whether pickle is included in the order to true. </value>
         private bool pickle = true;
+
+        /// <value> Stores and initializes whether cheese is included in the order to true. </value>
         private bool cheese = true;
+
+        /// <value> Stores and initializes whether tomato is included in the order to true. </value>
         private bool tomato = true;
+
+        /// <value> Stores and initializes whether lettuce is included in the order to true. </value>
         private bool lettuce = true;
+
+        /// <value> Stores and initializes whether mayo is included in the order to true. </value>
         private bool mayo = true;
+
+        /// <value> Stores and initializes whether bacon is included in the order to true. </value>
         private bool bacon = true;
+
+        /// <value> Stores and initializes whether egg is included in the order to true. </value>
         private bool egg = true;
+
+        /// <value> Stores and initializes the price of the meal. </value>
         private double price = 8.32;
+
+        /// <value> Stores and initializes the calories of the meal. </value>
         private uint calories = 943;
+
+        /// <value> Stores and initializes special instructions for the order to an empty list </value>
         private List<string> specialinstructions = new List<string>();
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants a bun.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Bun
         {
             get { return bun; }
@@ -46,10 +72,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants ketchup.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Ketchup
         {
             get { return ketchup; }
@@ -61,10 +87,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants mustard.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Mustard
         {
             get { return mustard; }
@@ -76,10 +102,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants pickles.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Pickle
         {
             get { return pickle; }
@@ -91,10 +117,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants cheese.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Cheese
         {
             get { return cheese; }
@@ -106,10 +132,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants tomato.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Tomato
         {
             get { return tomato; }
@@ -121,10 +147,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants lettuce.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Lettuce
         {
             get { return lettuce; }
@@ -136,10 +162,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants mayo.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Mayo
         {
             get { return mayo; }
@@ -151,10 +177,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants bacon.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Bacon
         {
             get { return bacon; }
@@ -166,10 +192,10 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property for whether or not customer wants an egg.
         /// Can get value or set a new value.
-        /// </summary>
+        /// </value>
         public bool Egg
         {
             get { return egg; }
@@ -181,25 +207,25 @@ namespace BleakwindBuffet.Data.Entrees
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property to return the price of this burger.
-        /// </summary>
+        /// </value>
         public double Price
         {
             get { return price; }
         }
 
-        /// <summary>
+        /// <value>
         /// Public property to return the amount of calories in this burger.
-        /// </summary>
+        /// </value>
         public uint Calories
         {
             get { return calories; }
         }
 
-        /// <summary>
+        /// <value>
         /// Returns a list of special instructions the customer can give.
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get { return specialinstructions; }

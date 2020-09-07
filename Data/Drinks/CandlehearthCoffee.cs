@@ -18,17 +18,31 @@ namespace BleakwindBuffet.Data.Drinks
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
+        
+        /// <value>Stores whether ice is in the drink</value>
         private bool ice = false;
+
+        /// <value> Stores whether the drink is decaf </value>
         private bool decaf = false;
+
+        /// <value> Stores whether the drink has cream </value>
         private bool roomForCream = false;
+
+        /// <value> Stores and initializes the size of the drink to small </value>
         private Size size = Size.Small;
+
+        /// <value> Stores and initializes special instructions for the order to an empty list </value>
         private List<string> specialinstructions = new List<string>();
+
+        /// <value> Stores and initializes the price of the drink to that of a small </value>
         private double price = 0.75;
+
+        /// <value> Stores and initializes the calories of the drink ot that of a small </value>
         private uint calories = 7;
 
-        /// <summary>
+        /// <value>
         /// Gets/sets whether the customer wants ice in their coffee.
-        /// </summary>
+        /// </value>
         public bool Ice
         {
             get { return ice; }
@@ -40,9 +54,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets/sets whether there is room for cream in their coffee!
-        /// </summary>
+        /// </value>
         public bool RoomForCream
         {
             get { return roomForCream; }
@@ -54,9 +68,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets/sets whether the customer wants their coffee decaf.
-        /// </summary>
+        /// </value>
         public bool Decaf
         {
             get { return decaf; }
@@ -66,21 +80,21 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets/sets what size coffee the customer wants.
-        /// </summary>
+        /// </value>
         public Size Size
         {
             get { return size; }
             set
             {
-                Size = value;
+                size = value;
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets the price or sets price depending on the size of the drink.
-        /// </summary>
+        /// </value>
         public double Price
         {
             get
@@ -117,9 +131,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets the calories or sets calories based on the size of the drink.
-        /// </summary>
+        /// </value>
         public uint Calories
         {
             get
@@ -156,9 +170,9 @@ namespace BleakwindBuffet.Data.Drinks
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Allows us to get/set the list of special instructions.
-        /// </summary>
+        /// </value>
         public List<string> SpecialInstructions
         {
             get { return specialinstructions; }

@@ -18,13 +18,29 @@ namespace BleakwindBuffet.Data.Sides
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
+
+        /// <value> Stores and initializes the price of the side. </value>
         private double price = 1.22;
+
+        /// <value> Stores and initializes the size of the side to small </value>
         private Size size = Size.Small;
+
+        /// <value> Stores and initializes the calories of the side to that of a small </value>
         private uint calories = 105;
 
-        /// <summary>
+        /// <value> Holds the special instructions (empty)</value>
+        public List<string> SpecialInstructions = new List<string>();
+
+        /// <value>Holds the size of this item</value>
+        public Size Size
+        {
+            get { return size; }
+            set { size = value; }
+        }
+
+        /// <value>
         /// Gets/sets the price of this side based on size.
-        /// </summary>
+        /// </value>
         public double Price
         {
             get
@@ -61,9 +77,9 @@ namespace BleakwindBuffet.Data.Sides
             }
         }
 
-        /// <summary>
+        /// <value>
         /// Gets/sets number of calories for this side based on size.
-        /// </summary>
+        /// </value>
         public uint Calories
         {
             get
