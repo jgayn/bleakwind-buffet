@@ -9,6 +9,7 @@ using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 using System.Collections.Generic;
+using Data;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -131,6 +132,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 
             aaj.Size = size;
             Assert.Equal(name, aaj.ToString());
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToIOrderItems()
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+            Assert.IsAssignableFrom<Drink>(a);
         }
     }
 }

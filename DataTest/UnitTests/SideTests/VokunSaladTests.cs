@@ -5,6 +5,7 @@
  */
 using Xunit;
 
+using Data;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
@@ -71,6 +72,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             VokunSalad vs = new VokunSalad();
             vs.Size = size;
             Assert.Equal(name, vs.ToString());
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToIOrderItems()
+        {
+            VokunSalad a = new VokunSalad();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+            Assert.IsAssignableFrom<Side>(a);
         }
     }
 }

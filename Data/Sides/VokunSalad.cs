@@ -4,6 +4,7 @@
  */
 
 using BleakwindBuffet.Data.Enums;
+using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ namespace BleakwindBuffet.Data.Sides
     /// <summary>
     /// Holds information for an order of a Vokun Salad.
     /// </summary>
-    public class VokunSalad
+    public class VokunSalad : Side, IOrderItem
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

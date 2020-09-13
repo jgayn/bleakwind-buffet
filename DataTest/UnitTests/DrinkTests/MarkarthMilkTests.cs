@@ -5,6 +5,7 @@
  */
 using Xunit;
 
+using Data;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
@@ -100,6 +101,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             mm.Size = size;
 
             Assert.Equal(name, mm.ToString());
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToIOrderItems()
+        {
+            MarkarthMilk a = new MarkarthMilk();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+            Assert.IsAssignableFrom<Drink>(a);
         }
     }
 }

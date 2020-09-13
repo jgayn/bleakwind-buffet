@@ -7,13 +7,14 @@ using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Data;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// Holds information about an order of Markarth's Milk.
     /// </summary>
-    public class MarkarthMilk
+    public class MarkarthMilk : Drink, IOrderItem
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

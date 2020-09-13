@@ -5,6 +5,7 @@
  */
 using Xunit;
 
+using Data;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Entrees;
@@ -73,6 +74,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             fm.Size = size;
 
             Assert.Equal(name, fm.ToString());
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToIOrderItems()
+        {
+            FriedMiraak a = new FriedMiraak();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+            Assert.IsAssignableFrom<Side>(a);
         }
     }
 }

@@ -4,6 +4,7 @@ using BleakwindBuffet;
 using BleakwindBuffet.Data.Drinks;
 using BleakwindBuffet.Data.Enums;
 using System.Collections.Generic;
+using Data;
 
 namespace WarriorWaterTests
 {
@@ -113,6 +114,14 @@ namespace WarriorWaterTests
 
             ww.SpecialInstructions = list;
             Assert.Equal(list, ww.SpecialInstructions);
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToIOrderItems()
+        {
+            WarriorWater a = new WarriorWater();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+            Assert.IsAssignableFrom<Drink>(a);
         }
     }
 }

@@ -5,6 +5,7 @@
  */
 using Xunit;
 
+using Data;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
 using System.Collections.Generic;
@@ -219,6 +220,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             ThalmorTriple tt = new ThalmorTriple();
             Assert.Equal("Thalmor Triple", tt.ToString());
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToIOrderItems()
+        {
+            ThalmorTriple a = new ThalmorTriple();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+            Assert.IsAssignableFrom<Entree>(a);
         }
     }
 }

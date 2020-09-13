@@ -7,13 +7,14 @@ using BleakwindBuffet.Data.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Data;
 
 namespace BleakwindBuffet.Data.Sides
 {
     /// <summary>
     /// Holds information for an order of Mad Otar Grits.
     /// </summary>
-    public class MadOtarGrits
+    public class MadOtarGrits : Side, IOrderItem
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

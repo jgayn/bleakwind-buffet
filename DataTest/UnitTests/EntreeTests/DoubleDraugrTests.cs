@@ -5,6 +5,7 @@
  */
 using Xunit;
 
+using Data;
 using System;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Entrees;
@@ -183,6 +184,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
         {
             DoubleDraugr bb = new DoubleDraugr();
             Assert.Equal("Double Draugr", bb.ToString());
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToIOrderItems()
+        {
+            DoubleDraugr a = new DoubleDraugr();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+            Assert.IsAssignableFrom<Entree>(a);
         }
     }
 }

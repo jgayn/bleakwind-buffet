@@ -5,6 +5,7 @@
  */
 using Xunit;
 
+using Data;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
@@ -70,6 +71,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             mog.Size = size;
 
             Assert.Equal(name, mog.ToString());
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToIOrderItems()
+        {
+            MadOtarGrits a = new MadOtarGrits();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+            Assert.IsAssignableFrom<Side>(a);
         }
     }
 }

@@ -4,6 +4,7 @@
  */
 
 using BleakwindBuffet.Data.Enums;
+using Data;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Holds information about an order of Warrior Water
     /// </summary>
-    public class WarriorWater
+    public class WarriorWater : Drink, IOrderItem
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.

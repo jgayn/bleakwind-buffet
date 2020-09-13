@@ -6,13 +6,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Data;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Holds information about an order of the Thalmor Triple.
     /// </summary>
-    public class ThalmorTriple
+    public class ThalmorTriple : Entree, IOrderItem
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.
@@ -208,19 +209,21 @@ namespace BleakwindBuffet.Data.Entrees
         }
 
         /// <value>
-        /// Public property to return the price of this burger.
+        /// Public property to return the price of this entree.
         /// </value>
         public double Price
         {
             get { return price; }
+            set { price = value; }
         }
 
         /// <value>
-        /// Public property to return the amount of calories in this burger.
+        /// Public property to return the amount of calories in this entree.
         /// </value>
         public uint Calories
         {
             get { return calories; }
+            set { calories = value; }
         }
 
         /// <value>
@@ -229,6 +232,7 @@ namespace BleakwindBuffet.Data.Entrees
         public List<string> SpecialInstructions
         {
             get { return specialinstructions; }
+            set { SpecialInstructions = value; }
         }
 
         /// <summary>

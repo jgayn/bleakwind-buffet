@@ -6,13 +6,14 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Data;
 
 namespace BleakwindBuffet.Data.Entrees
 {
     /// <summary>
     /// Holds information about an order of the Thug's T-Bone.
     /// </summary>
-    public class ThugsTBone
+    public class ThugsTBone : Entree, IOrderItem
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.
@@ -33,6 +34,7 @@ namespace BleakwindBuffet.Data.Entrees
         public double Price
         {
             get { return price; }
+            set { price = value; }
         }
 
         /// <value>
@@ -41,6 +43,7 @@ namespace BleakwindBuffet.Data.Entrees
         public uint Calories
         {
             get { return calories; }
+            set { calories = value; }
         }
 
         /// <value>
@@ -49,6 +52,7 @@ namespace BleakwindBuffet.Data.Entrees
         public List<string> SpecialInstructions
         {
             get { return specialinstructions; }
+            set { SpecialInstructions = value; }
         }
 
         /// <summary>

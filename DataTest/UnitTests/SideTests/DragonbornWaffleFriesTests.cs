@@ -5,6 +5,7 @@
  */
 using Xunit;
 
+using Data;
 using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Sides;
@@ -71,6 +72,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.SideTests
             d.Size = size;
 
             Assert.Equal(name, d.ToString());
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToIOrderItems()
+        {
+            DragonBornWaffleFries a = new DragonBornWaffleFries();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+            Assert.IsAssignableFrom<Side>(a);
         }
     }
 }

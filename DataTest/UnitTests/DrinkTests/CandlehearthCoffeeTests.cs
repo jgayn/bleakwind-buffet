@@ -9,6 +9,7 @@ using BleakwindBuffet.Data;
 using BleakwindBuffet.Data.Enums;
 using BleakwindBuffet.Data.Drinks;
 using System.Collections.Generic;
+using Data;
 
 namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
@@ -134,6 +135,14 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.Equal(name, cc.ToString());
 
            
+        }
+
+        [Fact]
+        public void ShouldBeAssignableToIOrderItems()
+        {
+            CandlehearthCoffee a = new CandlehearthCoffee();
+            Assert.IsAssignableFrom<IOrderItem>(a);
+            Assert.IsAssignableFrom<Drink>(a);
         }
     }
 }
