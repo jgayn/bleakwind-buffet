@@ -8,14 +8,21 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Data;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Drinks
 {
     /// <summary>
     /// Holds information about an order of Markarth's Milk.
     /// </summary>
-    public class MarkarthMilk : Drink, IOrderItem
+    public class MarkarthMilk : Drink, IOrderItem, INotifyPropertyChanged
     {
+
+        /// <summary>
+        /// Event handler for changing properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
@@ -46,6 +53,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value)
                     specialinstructions.Add("Add ice");
                 ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
 
@@ -58,6 +66,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
             }
         }
 
@@ -89,12 +98,15 @@ namespace BleakwindBuffet.Data.Drinks
                 {
                     case Size.Small:
                         price = 1.05;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         break;
                     case Size.Medium:
                         price = 1.11;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         break;
                     case Size.Large:
                         price = 1.22;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         break;
                 }
             }
@@ -128,12 +140,15 @@ namespace BleakwindBuffet.Data.Drinks
                 {
                     case Size.Small:
                         calories = 56;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                         break;
                     case Size.Medium:
                         calories = 72;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                         break;
                     case Size.Large:
                         calories = 93;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                         break;
                 }
             }
@@ -148,6 +163,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 specialinstructions = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 

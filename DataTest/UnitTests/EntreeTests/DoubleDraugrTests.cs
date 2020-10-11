@@ -193,5 +193,61 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.IsAssignableFrom<IOrderItem>(a);
             Assert.IsAssignableFrom<Entree>(a);
         }
+
+        [Fact]
+        public void BunPropertyChanges()
+        {
+            DoubleDraugr a = new DoubleDraugr();
+            Assert.PropertyChanged(a, "Bun", () => a.Bun = false);
+        }
+
+        [Fact]
+        public void KetchupPropertyChanges()
+        {
+            DoubleDraugr a = new DoubleDraugr();
+            Assert.PropertyChanged(a, "Ketchup", () => a.Ketchup = false);
+        }
+
+        [Fact]
+        public void MustardPropertyChanges()
+        {
+            DoubleDraugr a = new DoubleDraugr();
+            Assert.PropertyChanged(a, "Mustard", () => a.Mustard = false);
+        }
+
+        [Fact]
+        public void PicklePropertyChanges()
+        {
+            DoubleDraugr a = new DoubleDraugr();
+            Assert.PropertyChanged(a, "Pickle", () => a.Pickle = false);
+        }
+
+        [Fact]
+        public void CheesePropertyChanges()
+        {
+            DoubleDraugr a = new DoubleDraugr();
+            Assert.PropertyChanged(a, "Cheese", () => a.Cheese = false);
+        }
+
+        [Fact]
+        public void TomatoPropertyChanges()
+        {
+            DoubleDraugr a = new DoubleDraugr();
+            Assert.PropertyChanged(a, "Tomato", () => a.Tomato = false);
+        }
+
+        [Fact]
+        public void LettucePropertyChanges()
+        {
+            DoubleDraugr a = new DoubleDraugr();
+            Assert.PropertyChanged(a, "Lettuce", () => a.Lettuce = false);
+        }
+
+        [Fact]
+        public void MayoPropertyChanges()
+        {
+            DoubleDraugr a = new DoubleDraugr();
+            Assert.PropertyChanged(a, "Mayo", () => a.Mayo = false);
+        }
     }
 }

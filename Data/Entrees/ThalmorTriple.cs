@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using Data;
 
@@ -13,8 +14,13 @@ namespace BleakwindBuffet.Data.Entrees
     /// <summary>
     /// Holds information about an order of the Thalmor Triple.
     /// </summary>
-    public class ThalmorTriple : Entree, IOrderItem
+    public class ThalmorTriple : Entree, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler for changing properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
@@ -70,6 +76,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                     specialinstructions.Add("Hold bun");
                 bun = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bun"));
             }
         }
 
@@ -85,6 +92,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                     specialinstructions.Add("Hold ketchup");
                 ketchup = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ketchup"));
             }
         }
 
@@ -100,6 +108,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                     specialinstructions.Add("Hold mustard");
                 mustard = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mustard"));
             }
         }
 
@@ -115,6 +124,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                     specialinstructions.Add("Hold pickle");
                 pickle = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Pickle"));
             }
         }
 
@@ -130,6 +140,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                     specialinstructions.Add("Hold cheese");
                 cheese = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Cheese"));
             }
         }
 
@@ -145,6 +156,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                     specialinstructions.Add("Hold tomato");
                 tomato = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Tomato"));
             }
         }
 
@@ -160,6 +172,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                     specialinstructions.Add("Hold lettuce");
                 lettuce = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lettuce"));
             }
         }
 
@@ -175,6 +188,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                     specialinstructions.Add("Hold mayo");
                 mayo = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Mayo"));
             }
         }
 
@@ -190,6 +204,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                     specialinstructions.Add("Hold bacon");
                 bacon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Bacon"));
             }
         }
 
@@ -205,6 +220,7 @@ namespace BleakwindBuffet.Data.Entrees
                 if (!value)
                     specialinstructions.Add("Hold egg");
                 egg = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Egg"));
             }
         }
 
@@ -214,7 +230,10 @@ namespace BleakwindBuffet.Data.Entrees
         public double Price
         {
             get { return price; }
-            set { price = value; }
+            set { 
+                price = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
+            }
         }
 
         /// <value>
@@ -223,7 +242,10 @@ namespace BleakwindBuffet.Data.Entrees
         public uint Calories
         {
             get { return calories; }
-            set { calories = value; }
+            set { 
+                calories = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
+            }
         }
 
         /// <value>
@@ -232,7 +254,10 @@ namespace BleakwindBuffet.Data.Entrees
         public List<string> SpecialInstructions
         {
             get { return specialinstructions; }
-            set { SpecialInstructions = value; }
+            set { 
+                SpecialInstructions = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
+            }
         }
 
         /// <summary>

@@ -8,14 +8,20 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Data;
+using System.ComponentModel;
 
 namespace BleakwindBuffet.Data.Sides
 {
     /// <summary>
     /// Holds information for an order of Mad Otar Grits.
     /// </summary>
-    public class MadOtarGrits : Side, IOrderItem
+    public class MadOtarGrits : Side, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler for changing properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
@@ -36,7 +42,10 @@ namespace BleakwindBuffet.Data.Sides
         public Size Size
         {
             get { return size; }
-            set { size = value; }
+            set { 
+                size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
+            }
         }
 
         /// <value>
@@ -67,12 +76,15 @@ namespace BleakwindBuffet.Data.Sides
                 {
                     case Size.Small:
                         price = 1.22;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         break;
                     case Size.Medium:
                         price = 1.58;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         break;
                     case Size.Large:
                         price = 1.93;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
                         break;
                 }
             }
@@ -106,12 +118,15 @@ namespace BleakwindBuffet.Data.Sides
                 {
                     case Size.Small:
                         calories = 105;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                         break;
                     case Size.Medium:
                         calories = 142;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                         break;
                     case Size.Large:
                         calories = 179;
+                        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
                         break;
                 }
             }

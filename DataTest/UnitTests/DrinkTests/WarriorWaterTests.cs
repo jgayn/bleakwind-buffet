@@ -6,7 +6,7 @@ using BleakwindBuffet.Data.Enums;
 using System.Collections.Generic;
 using Data;
 
-namespace WarriorWaterTests
+namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
 {
     public class WarriorWaterTests
     {
@@ -122,6 +122,46 @@ namespace WarriorWaterTests
             WarriorWater a = new WarriorWater();
             Assert.IsAssignableFrom<IOrderItem>(a);
             Assert.IsAssignableFrom<Drink>(a);
+        }
+
+        [Fact]
+        public void IcePropertyChanges()
+        {
+            WarriorWater a = new WarriorWater();
+            Assert.PropertyChanged(a, "Ice", () => a.Ice = true);
+        }
+
+        [Fact]
+        public void LemonPropertyChanges()
+        {
+            WarriorWater a = new WarriorWater();
+            Assert.PropertyChanged(a, "Lemon", () => a.Lemon = true);
+        }
+
+        [Fact]
+        public void PricePropertyChanges()
+        {
+            WarriorWater a = new WarriorWater();
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0);
+        }
+
+        [Fact]
+        public void InstructionsPropertyChanges()
+        {
+            WarriorWater a = new WarriorWater();
+            Assert.PropertyChanged(a, "SpecialInstructions", () => a.SpecialInstructions = new List<string>());
+        }
+
+        [Fact]
+        public void CaloriesPropertyChanges()
+        {
+            WarriorWater a = new WarriorWater();
+            a.Size = Size.Small;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+            a.Size = Size.Medium;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+            a.Size = Size.Large;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
         }
     }
 }

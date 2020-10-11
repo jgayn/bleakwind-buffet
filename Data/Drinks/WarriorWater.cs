@@ -15,8 +15,13 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Holds information about an order of Warrior Water
     /// </summary>
-    public class WarriorWater : Drink, IOrderItem
+    public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged
     {
+        /// <summary>
+        /// Event handler for changing properties
+        /// </summary>
+        public event PropertyChangedEventHandler PropertyChanged;
+
         /// <summary>
         /// Creation of various private backing variables used in public properties.
         /// </summary>
@@ -50,6 +55,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (!value)
                     specialinstructions.Add("Hold ice");
                 ice = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Ice"));
             }
         }
 
@@ -64,6 +70,7 @@ namespace BleakwindBuffet.Data.Drinks
                 if (value)
                     specialinstructions.Add("Add lemon");
                 lemon = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Lemon"));
             }
         }
 
@@ -76,6 +83,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 size = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Size"));
             }
         }
 
@@ -88,6 +96,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 price = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Price"));
             }
         }
 
@@ -100,6 +109,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 calories = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Calories"));
             }
         }
 
@@ -112,6 +122,7 @@ namespace BleakwindBuffet.Data.Drinks
             set
             {
                 specialinstructions = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("SpecialInstructions"));
             }
         }
 

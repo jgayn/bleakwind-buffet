@@ -141,5 +141,47 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.IsAssignableFrom<IOrderItem>(a);
             Assert.IsAssignableFrom<Drink>(a);
         }
+
+        [Fact]
+        public void IcePropertyChanges()
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            Assert.PropertyChanged(a, "Ice", () => a.Ice = true);
+        }
+
+        [Fact]
+        public void SizePropertyChanges()
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            Assert.PropertyChanged(a, "Size", () => a.Size = Size.Large);
+            Assert.PropertyChanged(a, "Size", () => a.Size = Size.Medium);
+            Assert.PropertyChanged(a, "Size", () => a.Size = Size.Small);
+        }
+
+        [Fact]
+        public void PricePropertyChanges()
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            a.Size = Size.Small;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0);
+            a.Size = Size.Medium;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0);
+            a.Size = Size.Large;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0);
+        }
+
+        [Fact]
+        public void CaloriesPropertyChanges()
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 100);
+        }
+
+        [Fact]
+        public void InstructionsPropertyChanges()
+        {
+            AretinoAppleJuice a = new AretinoAppleJuice();
+            Assert.PropertyChanged(a, "SpecialInstructions", () => a.SpecialInstructions = new List<string>());
+        }
     }
 }

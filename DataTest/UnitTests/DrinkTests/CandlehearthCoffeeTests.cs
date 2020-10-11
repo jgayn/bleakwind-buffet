@@ -144,5 +144,66 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.IsAssignableFrom<IOrderItem>(a);
             Assert.IsAssignableFrom<Drink>(a);
         }
+        
+        [Fact]
+        public void IcePropertyChanges()
+        {
+            CandlehearthCoffee a = new CandlehearthCoffee();
+            Assert.PropertyChanged(a, "Ice", () => a.Ice = true);
+        }
+
+        [Fact]
+        public void RoomForCreamPropertyChanges()
+        {
+            CandlehearthCoffee a = new CandlehearthCoffee();
+            Assert.PropertyChanged(a, "RoomForCream", () => a.RoomForCream = true);
+        }
+
+        [Fact]
+        public void DecafPropertyChanges()
+        {
+            CandlehearthCoffee a = new CandlehearthCoffee();
+            Assert.PropertyChanged(a, "Decaf", () => a.Decaf = true);
+        }
+
+        [Fact]
+        public void SizePropertyChanges()
+        {
+            CandlehearthCoffee a = new CandlehearthCoffee();
+            Assert.PropertyChanged(a, "Size", () => a.Size = Size.Large);
+            Assert.PropertyChanged(a, "Size", () => a.Size = Size.Medium);
+            Assert.PropertyChanged(a, "Size", () => a.Size = Size.Small);
+        }
+
+        [Fact]
+        public void PricePropertyChanges()
+        {
+            CandlehearthCoffee a = new CandlehearthCoffee();
+            a.Size = Size.Small;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0.75);
+            a.Size = Size.Medium;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 1.25);
+            a.Size = Size.Large;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 1.75);
+        }
+
+        [Fact]
+        public void CaloriesPropertyChanges()
+        {
+            CandlehearthCoffee a = new CandlehearthCoffee();
+            a.Size = Size.Small;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+            a.Size = Size.Medium;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+            a.Size = Size.Large;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+        }
+
+        [Fact]
+        public void InstructionsPropertyChanges()
+        {
+            CandlehearthCoffee a = new CandlehearthCoffee();
+            Assert.PropertyChanged(a, "SpecialInstructions", () => a.SpecialInstructions = new List<string>());
+        }
     }
 }

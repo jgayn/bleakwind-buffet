@@ -110,5 +110,50 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.IsAssignableFrom<IOrderItem>(a);
             Assert.IsAssignableFrom<Drink>(a);
         }
+
+        [Fact]
+        public void IcePropertyChanges()
+        {
+            MarkarthMilk a = new MarkarthMilk();
+            Assert.PropertyChanged(a, "Ice", () => a.Ice = true);
+        }
+
+        [Fact]
+        public void SizePropertyChanges()
+        {
+            MarkarthMilk a = new MarkarthMilk();
+            Assert.PropertyChanged(a, "Size", () => a.Size = Size.Medium);
+        }
+
+        [Fact]
+        public void InstructionsPropertyChanges()
+        {
+            MarkarthMilk a = new MarkarthMilk();
+            Assert.PropertyChanged(a, "SpecialInstructions", () => a.SpecialInstructions = new List<string>());
+        }
+
+        [Fact]
+        public void CaloriesPropertyChanges()
+        {
+            MarkarthMilk a = new MarkarthMilk();
+            a.Size = Size.Small;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+            a.Size = Size.Medium;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+            a.Size = Size.Large;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+        }
+
+        [Fact]
+        public void PricePropertyChanges()
+        {
+            MarkarthMilk a = new MarkarthMilk();
+            a.Size = Size.Small;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0);
+            a.Size = Size.Medium;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0);
+            a.Size = Size.Large;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0);
+        }
     }
 }

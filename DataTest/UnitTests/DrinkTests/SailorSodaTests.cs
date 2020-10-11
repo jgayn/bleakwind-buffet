@@ -180,5 +180,57 @@ namespace BleakwindBuffet.DataTests.UnitTests.DrinkTests
             Assert.IsAssignableFrom<IOrderItem>(a);
             Assert.IsAssignableFrom<Drink>(a);
         }
+
+        [Fact]
+        public void IcePropertyChanges()
+        {
+            SailorSoda a = new SailorSoda();
+            Assert.PropertyChanged(a, "Ice", () => a.Ice = true);
+        }
+
+        [Fact]
+        public void FlavorPropertyChanges()
+        {
+            SailorSoda a = new SailorSoda();
+            Assert.PropertyChanged(a, "Flavor", () => a.Flavor = SodaFlavor.Lemon);
+        }
+
+        [Fact]
+        public void SizePropertyChanges()
+        {
+            SailorSoda a = new SailorSoda();
+            Assert.PropertyChanged(a, "Size", () => a.Size = Size.Medium);
+        }
+
+        [Fact]
+        public void InstructionsPropertyChanges()
+        {
+            SailorSoda a = new SailorSoda();
+            Assert.PropertyChanged(a, "SpecialInstructions", () => a.SpecialInstructions = new List<string>());
+        }
+
+        [Fact]
+        public void CaloriesPropertyChanges()
+        {
+            SailorSoda a = new SailorSoda();
+            a.Size = Size.Small;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+            a.Size = Size.Medium;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+            a.Size = Size.Large;
+            Assert.PropertyChanged(a, "Calories", () => a.Calories = 0);
+        }
+
+        [Fact]
+        public void PricePropertyChanges()
+        {
+            SailorSoda a = new SailorSoda();
+            a.Size = Size.Small;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0);
+            a.Size = Size.Medium;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0);
+            a.Size = Size.Large;
+            Assert.PropertyChanged(a, "Price", () => a.Price = 0);
+        }
     }
 }

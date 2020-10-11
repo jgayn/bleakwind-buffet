@@ -124,5 +124,33 @@ namespace BleakwindBuffet.DataTests.UnitTests.EntreeTests
             Assert.IsAssignableFrom<IOrderItem>(a);
             Assert.IsAssignableFrom<Entree>(a);
         }
+
+        [Fact]
+        public void BrocolliPropertyChanges()
+        {
+            GardenOrcOmelette a = new GardenOrcOmelette();
+            Assert.PropertyChanged(a, "Brocolli", () => a.Brocolli = false);
+        }
+
+        [Fact]
+        public void MushroomsPropertyChanges()
+        {
+            GardenOrcOmelette a = new GardenOrcOmelette();
+            Assert.PropertyChanged(a, "Mushrooms", () => a.Mushrooms = false);
+        }
+
+        [Fact]
+        public void TomatoPropertyChanges()
+        {
+            GardenOrcOmelette a = new GardenOrcOmelette();
+            Assert.PropertyChanged(a, "Tomato", () => a.Tomato = false);
+        }
+
+        [Fact]
+        public void CheddarPropertyChanges()
+        {
+            GardenOrcOmelette a = new GardenOrcOmelette();
+            Assert.PropertyChanged(a, "Cheddar", () => a.Cheddar = false);
+        }
     }
 }
