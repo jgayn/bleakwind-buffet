@@ -1,128 +1,161 @@
-﻿<Window x:Class="PointOfSale.MainWindow"
+﻿<Window x:Class="BleakwindBuffet.PointOfSale.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:PointOfSale"
+        xmlns:local="clr-namespace:BleakwindBuffet.PointOfSale"
         mc:Ignorable="d"
         Title="Bleakwind Buffet Point of Sale" Height="450" Width="800">
-
     <Grid>
+
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">
+            Add to Order
+        </Label>
+
+        <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">
+            Customize
+        </Label>
+
+        <Label x:Name="orderLabel" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20">
+            Order #1
+        </Label>
+
+        <!-- TOTALS -->
+        <Grid Grid.Column="2" Grid.Row="1" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <ListView x:Name="listOfItems" Width="100" HorizontalAlignment="Left" BorderBrush="White">
+                
+            </ListView>
+
+            <ListView x:Name="listOfPrices" Width="50" HorizontalAlignment="Right" BorderBrush="White">
+                
+            </ListView>
+
+            <Label x:Name="subtotalLabel" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Top">
+                Subtotal: $0.00
+            </Label>
+            <Label x:Name="taxLabel" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="28,0,0,0">
+                Tax: $0.00
+            </Label>
+            <Label x:Name="totalLabel" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="19,0,0,0">
+                Total: $0.00
+            </Label>
+
+            <Button Grid.Row="1" Width="70" HorizontalAlignment="Left" IsEnabled="False">
+                Checkout
+            </Button>
+        </Grid>
+
+        <!-- CUSTOMIZE -->
+        <Grid Grid.Column="1" Grid.Row="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="6*"></RowDefinition>
+                <RowDefinition Height="1*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <StackPanel x:Name="checkBoxStack" HorizontalAlignment="Center" Width="100" Height="300">
+
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Button x:Name="cancelButton" Click="OnCancelClick" Width="80" HorizontalAlignment="Left" IsEnabled="False">
+                    Cancel
+                </Button>
+                <Button x:Name="addButton" Click="OnAddClick" Width="80" HorizontalAlignment="Right" IsEnabled="False">
+                    Add
+                </Button>
+            </Grid>
+        </Grid>
+
+        <!-- BUTTONS -->
+        <Grid x:Name="Buttons" Grid.Row="1" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="1*"/>
-                <RowDefinition Height="5*"/>
-            </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center">
-                <Label FontWeight="Bold" FontSize="18" VerticalAlignment="Center">Add Items to Order</Label>
-            </Grid>
+            <!-- Entrees -->
+            <Button Grid.Row="0" Grid.Column="0" x:Name="briarheartButton" Click="GoToCustomizeClick">
+                Briarheart Burger
+            </Button>
+            <Button Grid.Row="1" Grid.Column="0" x:Name="draugrButton" Click="GoToCustomizeClick">
+                Double Draugr
+            </Button>
+            <Button Grid.Row="2" Grid.Column="0" x:Name="omeletteButton" Click="GoToCustomizeClick">
+                Garden Orc Omelette
+            </Button>
+            <Button Grid.Row="3" Grid.Column="0" x:Name="phillyButton" Click="GoToCustomizeClick">
+                Philly Poacher
+            </Button>
+            <Button Grid.Row="4" Grid.Column="0" x:Name="smokehouseButton" Click="GoToCustomizeClick">
+                Smokehouse Skeleton
+            </Button>
+            <Button Grid.Row="5" Grid.Column="0" x:Name="thalmorButton" Click="GoToCustomizeClick">
+                Thalmor Triple
+            </Button>
+            <Button Grid.Row="6" Grid.Column="0" x:Name="thugsButton" Click="GoToCustomizeClick">
+                Thugs T-Bone
+            </Button>
 
-            <!--Entrees-->
-            <Grid Grid.Column="0" Grid.Row="1">
-                <StackPanel>
-                    <!--Add Margins-->
-                    <Button Name="burgerButton" Width="120" Margin="10">
-                        Briarheart Burger
-                    </Button>
+            <!-- Drinks -->
+            <Button Grid.Row="0" Grid.Column="1" x:Name="sodaButton" Click="GoToCustomizeClick">
+                Sailor Soda
+            </Button>
+            <Button Grid.Row="1" Grid.Column="1" x:Name="milkButton" Click="GoToCustomizeClick">
+                Markarth Milk
+            </Button>
+            <Button Grid.Row="2" Grid.Column="1" x:Name="appleButton" Click="GoToCustomizeClick">
+                Aretino Apple Juice
+            </Button>
+            <Button Grid.Row="3" Grid.Column="1" x:Name="coffeeButton" Click="GoToCustomizeClick">
+                Candlehearth Coffee
+            </Button>
+            <Button Grid.Row="4" Grid.Column="1" x:Name="waterButton" Click="GoToCustomizeClick">
+                Warrior Water
+            </Button>
 
-                    <Button Name="draugrButton" Width="120" Margin="10">
-                        Double Draugr
-                    </Button>
-
-                    <Button Name="tripleButton" Width="120" Margin="10">
-                        Thalmor Triple
-                    </Button>
-
-                    <Button Name="smokehouseButton" Width="120" Margin="10">
-                        Smokehouse Skeleton
-                    </Button>
-
-                    <Button Name="omeletteButton" Width="120" Margin="10">
-                        Garden Orc Omelette
-                    </Button>
-
-                    <Button Name="tboneButton" Width="120" Margin="10">
-                        Thugs T-Bone
-                    </Button>
-                </StackPanel>
-            </Grid>
-
-            <!--Drinks-->
-            <Grid Grid.Column="1" Grid.Row="1">
-                <StackPanel>
-                    <!--Add Margins-->
-                    <Button Name="sodaButton" Width="120" Margin="10">
-                        Sailor Soda
-                    </Button>
-
-                    <Button Name="markarthButton" Width="120" Margin="10">
-                        Markarth Milk
-                    </Button>
-
-                    <Button Name="appleButton" Width="120" Margin="10">
-                        Aretino Apple Juice
-                    </Button>
-
-                    <Button Name="coffeeButton" Width="120" Margin="10">
-                        Candlehearth Coffee
-                    </Button>
-
-                    <Button Name="warriorWater" Width="120" Margin="10">
-                        Warrior Water
-                    </Button>
-                </StackPanel>
-            </Grid>
-
-            <Grid Grid.Column="2" Grid.Row="1">
-                <StackPanel>
-                    <Button Name="saladButton" Width="120" Margin="10">
-                        Vokun Salad
-                    </Button>
-
-                    <Button Name="miraakButton" Width="120" Margin="10">
-                        Fried Miraak
-                    </Button>
-
-                    <Button Name="gritsButton" Width="120" Margin="10">
-                        Mad Otar Grits
-                    </Button>
-
-                    <Button Name="friesButton" Width="120" Margin="10">
-                        Dragonborn Waffle Fries
-                    </Button>
-                </StackPanel>
-            </Grid>
-        </Grid>
-
-        <!--Order pane grid-->
-        <Grid Grid.Column="1">
-
-            <Label FontWeight="Bold" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Center">Order #</Label>
-
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="5*"/>
-                    <RowDefinition Height="1*"/>
-                </Grid.RowDefinitions>
-
-                <Label Grid.Row="1" HorizontalAlignment="Center" FontSize="16">Subtotal:</Label>
-                <Label Grid.Row="1" HorizontalAlignment="Center" FontSize="16" Margin="0,14,0,-14">Tax:</Label>
-                <Label Grid.Row="1" HorizontalAlignment="Center" FontSize="16" Margin="0,28,0,-28">Total:</Label>
-            </Grid>
+            <!-- Apps -->
+            <Button Grid.Row="0" Grid.Column="2" x:Name="saladButton" Click="GoToCustomizeClick">
+                Vokun Salad
+            </Button>
+            <Button Grid.Row="1" Grid.Column="2" x:Name="miraakButton" Click="GoToCustomizeClick">
+                Fried Miraak
+            </Button>
+            <Button Grid.Row="2" Grid.Column="2" x:Name="gritsButton" Click="GoToCustomizeClick">
+                Mad Otar Grits
+            </Button>
+            <Button Grid.Row="3" Grid.Column="2" x:Name="friesButton" Click="GoToCustomizeClick">
+                Dragonborn Waffle Fries
+            </Button>
         </Grid>
     </Grid>
-
-
-
 </Window>

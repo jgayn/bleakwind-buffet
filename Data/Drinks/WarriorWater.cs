@@ -7,6 +7,7 @@ using BleakwindBuffet.Data.Enums;
 using Data;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace BleakwindBuffet.Data.Drinks
@@ -14,7 +15,7 @@ namespace BleakwindBuffet.Data.Drinks
     /// <summary>
     /// Holds information about an order of Warrior Water
     /// </summary>
-    public class WarriorWater : Drink, IOrderItem
+    public class WarriorWater : Drink, IOrderItem, INotifyPropertyChanged
     {
         /// <summary>
         /// Creation of various private backing variables used in public properties.
@@ -136,6 +137,22 @@ namespace BleakwindBuffet.Data.Drinks
             }
 
             return (sizeStr + " Warrior Water");
+        }
+
+        public PropertyChangedEventHandler PropertyChanged(object sender, EventArgs e)
+        {
+            string args = e.ToString();
+
+            switch(args)
+            {
+                case "Ice":
+                    if (Ice) Ice = false;
+                    else Ice = true;
+                    break;
+                case ""
+            }
+
+            return null;
         }
     }
 }
