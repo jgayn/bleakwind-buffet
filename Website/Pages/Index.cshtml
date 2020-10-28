@@ -1,0 +1,96 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bleakwind Buffet Menu</h1>
+
+    <p class="combo-announce">Combine any entree, side and drink for $1 off at checkout!</p>
+
+    <div class="menu">
+        <ul class="menu-entrees">
+            <li>
+                <h2 class="title">Entrees</h2>
+            </li>
+            @{
+                IEnumerable<Data.IOrderItem> entreeList = Data.Menu.Entrees();
+                foreach (Data.IOrderItem d in entreeList)
+                {
+                    <li>
+                        <div class="menu-item">
+                            <div class="menu-name">
+                                @d.ToString()
+                            </div>
+                            <div class="menu-price">
+                                $@d.Price
+                            </div>
+                            <div class="menu-calories">
+                                @d.Calories
+                            </div>
+                        </div>
+
+                    </li>
+                }
+            }
+        </ul>
+
+
+        <ul class="menu-drinks">
+            <li>
+                <h2 class="title">Drinks</h2>
+            </li>
+            @{
+                IEnumerable<Data.IOrderItem> drinkList = Data.Menu.Drinks();
+                foreach (Data.IOrderItem d in drinkList)
+                {
+                    <li>
+                        <div class="menu-item">
+                            <div class="menu-name">
+                                @d.ToString()
+                            </div>
+                            <div class="menu-price">
+                                $@d.Price
+                            </div>
+                            <div class="menu-calories">
+                                @d.Calories
+                            </div>
+                        </div>
+
+                    </li>
+                }
+            }
+        </ul>
+
+        <ul class="menu-sides">
+            <li>
+                <h2 class="title">Sides</h2>
+            </li>
+            @{
+                IEnumerable<Data.IOrderItem> sidesList = Data.Menu.Sides();
+                foreach (Data.IOrderItem d in sidesList)
+                {
+                    <li>
+                        <div class="menu-item">
+                            <div class="menu-name">
+                                @d.ToString()
+                            </div>
+                            <div class="menu-price">
+                                $@d.Price
+                            </div>
+                            <div class="menu-calories">
+                                @d.Calories
+                            </div>
+                        </div>
+
+                    </li>
+                }
+            }
+        </ul>
+
+    </div>
+
+    
+
+</div>

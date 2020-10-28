@@ -12,7 +12,7 @@ namespace Data
         /// <value>
         /// Public property to access/set price of the entree
         /// </value>
-        public double Price
+        public abstract double Price
         {
             get;
             set;
@@ -21,7 +21,7 @@ namespace Data
         /// <value>
         /// Public property to access/set calories of the entree
         /// </value>
-        public uint Calories
+        public abstract uint Calories
         {
             get;
             set;
@@ -30,7 +30,7 @@ namespace Data
         /// <value>
         /// Public property to access/set special instructions of the entree
         /// </value>
-        public List<string> SpecialInstructions
+        public abstract List<string> SpecialInstructions
         {
             get;
             set;

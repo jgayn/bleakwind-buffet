@@ -36,10 +36,13 @@ namespace BleakwindBuffet.Data.Sides
         private uint calories = 77;
 
         /// <value> Holds the special instructions (empty)</value>
-        public List<string> SpecialInstructions = new List<string>();
+        public override List<string> SpecialInstructions {
+            get;
+            set;
+        } = new List<string>();
 
         /// <value>Holds the size of this item</value>
-        public Size Size
+        public override Size Size
         {
             get { return size; }
             set { 
@@ -51,7 +54,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <value>
         /// Gets/sets the price of this side based on size.
         /// </value>
-        public double Price
+        public override double Price
         {
             get
             {
@@ -93,7 +96,7 @@ namespace BleakwindBuffet.Data.Sides
         /// <value>
         /// Gets/sets number of calories for this side based on size.
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get
             {

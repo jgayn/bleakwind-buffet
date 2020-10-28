@@ -77,7 +77,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// Gets/sets what size drink the customer wants.
         /// </value>
-        public Size Size
+        public override Size Size
         {
             get { return size; }
             set
@@ -90,7 +90,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// Price should always be 0, but added a set just in case.
         /// </value>
-        public double Price
+        public override double Price
         {
             get { return price; }
             set
@@ -103,7 +103,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// Calories should always be 0, but added a set just in case.
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get { return calories; }
             set
@@ -116,7 +116,7 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value>
         /// Allows us to get/set the list of special instructions.
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get { return specialinstructions; }
             set

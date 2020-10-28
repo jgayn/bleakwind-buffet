@@ -127,7 +127,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// Public property to return the price of this entree.
         /// </value>
-        public double Price
+        public override double Price
         {
             get { return price; }
             set { 
@@ -139,7 +139,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// Public property to return the amount of calories in this entree.
         /// </value>
-        public uint Calories
+        public override uint Calories
         {
             get { return calories; }
             set { 
@@ -151,7 +151,7 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value>
         /// Returns a list of special instructions the customer can give.
         /// </value>
-        public List<string> SpecialInstructions
+        public override List<string> SpecialInstructions
         {
             get { return specialinstructions; }
             set { 
