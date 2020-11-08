@@ -6,10 +6,13 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{B66B462C-DA57-4DB7-9053-DEBD3953F479}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTest", "DataTest\DataTest.csproj", "{8D6EDF06-940D-44CE-8CF8-93FBBBC6E9CA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FD880DE0-B5C2-473D-AA96-FD5ACFFB76B8} = {FD880DE0-B5C2-473D-AA96-FD5ACFFB76B8}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PointOfSale", "PointOfSale\PointOfSale.csproj", "{4C328792-71E6-47BB-943B-39B0BC2C507F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Website", "Website\Website.csproj", "{FD880DE0-B5C2-473D-AA96-FD5ACFFB76B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Website", "Website\Website.csproj", "{FD880DE0-B5C2-473D-AA96-FD5ACFFB76B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

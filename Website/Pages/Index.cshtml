@@ -9,87 +9,68 @@
 
     <p class="combo-announce">Combine any entree, side and drink for $1 off at checkout!</p>
 
-    <div class="menu">
-        <ul class="menu-entrees">
-            <li>
-                <h2 class="title">Entrees</h2>
-            </li>
-            @{
-                IEnumerable<Data.IOrderItem> entreeList = Data.Menu.Entrees();
-                foreach (Data.IOrderItem d in entreeList)
+    <form class="menu">
+
+        <div id="sort-section">
+            <div id="search">
+                <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
+                <input type="submit" value="Search" />
+            </div>
+
+            <div id="checkboxes">
+                @foreach (string type in ItemFilter.ItemType)
                 {
-                    <li>
-                        <div class="menu-item">
-                            <div class="menu-name">
-                                @d.ToString()
-                            </div>
-                            <div class="menu-price">
-                                $@d.Price
-                            </div>
-                            <div class="menu-calories">
-                                @d.Calories
-                            </div>
-                        </div>
-
-                    </li>
+                    <label>
+                        <input type="checkbox" name="ItemTypes" value="@type" checked="@Model.ItemTypes.Contains(type)" />
+                        @type
+                    </label>
                 }
-            }
-        </ul>
+            </div>
 
+            <div id="price-sort">
+                Minimum Price
+                <input name="MinPrice" type="number" min="0" max="10" step=".5" placeholder="min" />
+                Maximum Price
+                <input name="MaxPrice" type="number" min="0" max="10" step=".5" placeholder="max" />
+            </div>
 
-        <ul class="menu-drinks">
-            <li>
-                <h2 class="title">Drinks</h2>
-            </li>
-            @{
-                IEnumerable<Data.IOrderItem> drinkList = Data.Menu.Drinks();
-                foreach (Data.IOrderItem d in drinkList)
-                {
-                    <li>
-                        <div class="menu-item">
-                            <div class="menu-name">
-                                @d.ToString()
-                            </div>
-                            <div class="menu-price">
-                                $@d.Price
-                            </div>
-                            <div class="menu-calories">
-                                @d.Calories
-                            </div>
-                        </div>
+            <div id="calories-sort">
+                Minimum Calories
+                <input name="MinCalories" type="number" min="0" max="1200" step="50" placeholder="min" />
+                Maximum Calories
+                <input name="MaxCalories" type="number" min="0" max="1200" step="50" placeholder="max" />
+            </div>
+        </div>
+        
 
-                    </li>
+        <div id="results">
+            <ul class="menu-entrees">
+                <li>
+                    <h2 class="title">Menu</h2>
+                </li>
+                @{
+                    foreach (Data.IOrderItem d in @Model.Items)
+                    {
+                        <li>
+                            <div class="menu-item">
+                                <div class="menu-name">
+                                    @d.ToString()
+                                </div>
+                                <div class="menu-price">
+                                    $@d.Price
+                                </div>
+                                <div class="menu-calories">
+                                    @d.Calories
+                                </div>
+                            </div>
+                        </li>
+                    }
                 }
-            }
-        </ul>
+            </ul>
+        </div>
 
-        <ul class="menu-sides">
-            <li>
-                <h2 class="title">Sides</h2>
-            </li>
-            @{
-                IEnumerable<Data.IOrderItem> sidesList = Data.Menu.Sides();
-                foreach (Data.IOrderItem d in sidesList)
-                {
-                    <li>
-                        <div class="menu-item">
-                            <div class="menu-name">
-                                @d.ToString()
-                            </div>
-                            <div class="menu-price">
-                                $@d.Price
-                            </div>
-                            <div class="menu-calories">
-                                @d.Calories
-                            </div>
-                        </div>
 
-                    </li>
-                }
-            }
-        </ul>
-
-    </div>
+    </form>
 
     
 
