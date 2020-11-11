@@ -64,6 +64,14 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value> Stores and initializes special instructions for the order to an empty list </value>
         private List<string> specialinstructions = new List<string>();
 
+        /// <summary>
+        /// Gets the description of the item
+        /// </summary>
+        public override string Description
+        {
+            get { return "Think you are strong enough to take on the Thalmor? Inlcudes two 1/4lb patties with a 1/2lb patty inbetween with ketchup, mustard, pickle, cheese, tomato, lettuce, mayo, bacon, and an egg."; }
+        }
+
         /// <value>
         /// Public property for whether or not customer wants a bun.
         /// Can get value or set a new value.

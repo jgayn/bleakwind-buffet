@@ -91,31 +91,39 @@ namespace Data
 
             AretinoAppleJuice a = new AretinoAppleJuice();
             list.Add(a);
-            a.Size = BleakwindBuffet.Data.Enums.Size.Medium;
-            list.Add(a);
-            a.Size = BleakwindBuffet.Data.Enums.Size.Large;
-            list.Add(a);
+            AretinoAppleJuice a2 = new AretinoAppleJuice();
+            a2.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+            list.Add(a2);
+            AretinoAppleJuice a3 = new AretinoAppleJuice();
+            a3.Size = BleakwindBuffet.Data.Enums.Size.Large;
+            list.Add(a3);
 
             CandlehearthCoffee c = new CandlehearthCoffee();
             list.Add(c);
-            c.Size = BleakwindBuffet.Data.Enums.Size.Medium;
-            list.Add(c);
-            c.Size = BleakwindBuffet.Data.Enums.Size.Large;
-            list.Add(c);
+            CandlehearthCoffee c2 = new CandlehearthCoffee();
+            c2.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+            list.Add(c2);
+            CandlehearthCoffee c3 = new CandlehearthCoffee();
+            c3.Size = BleakwindBuffet.Data.Enums.Size.Large;
+            list.Add(c3);
 
             MarkarthMilk m = new MarkarthMilk();
             list.Add(m);
-            m.Size = BleakwindBuffet.Data.Enums.Size.Medium;
-            list.Add(m);
-            m.Size = BleakwindBuffet.Data.Enums.Size.Large;
-            list.Add(m);
+            MarkarthMilk m2 = new MarkarthMilk();
+            m2.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+            list.Add(m2);
+            MarkarthMilk m3 = new MarkarthMilk();
+            m3.Size = BleakwindBuffet.Data.Enums.Size.Large;
+            list.Add(m3);
 
             WarriorWater w = new WarriorWater();
             list.Add(w);
-            w.Size = BleakwindBuffet.Data.Enums.Size.Medium;
-            list.Add(w);
-            w.Size = BleakwindBuffet.Data.Enums.Size.Large;
-            list.Add(w);
+            WarriorWater w2 = new WarriorWater();
+            w2.Size = BleakwindBuffet.Data.Enums.Size.Medium;
+            list.Add(w2);
+            WarriorWater w3 = new WarriorWater();
+            w3.Size = BleakwindBuffet.Data.Enums.Size.Large;
+            list.Add(w3);
 
             SailorSoda s = new SailorSoda();
             s.Flavor = BleakwindBuffet.Data.Enums.SodaFlavor.Blackberry;

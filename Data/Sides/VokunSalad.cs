@@ -42,6 +42,14 @@ namespace BleakwindBuffet.Data.Sides
             set;
         } = new List<string>();
 
+        /// <summary>
+        /// Gets the description of the item
+        /// </summary>
+        public override string Description
+        {
+            get { return "A seasonal fruit salad of mellons, berries, mango, grape, apple, and oranges."; }
+        }
+
         /// <value>Holds the size of this item</value>
         public override Size Size
         {

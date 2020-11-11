@@ -74,39 +74,59 @@ body {
     Custom CSS
 */
 
-ul.menu-drinks, ul.menu-entrees, ul.menu-sides {
-    display: flex;
-    flex-direction: column;
-    min-width:50%;
-    justify-content: right;
-    min-height: 30px;
-    
-    list-style-type: none;
-}
-
 .menu-name {
     font-size: 1.2rem;
     color: darkslategray;
     border-bottom: 1px dashed lightblue;
 }
 
-.menu-price, .menu-calories {
-    color: slategray;
-}
-
-.menu {
-    display: flex;
-    justify-content: space-evenly;
-}
-
 .title {
     margin-bottom: 20px;
     border-bottom: 1px solid darkgray;
+    text-align: center;
 }
 
 .sort-section {
     display:flex;
     flex-direction:row;
-    min-width:30%;
+    min-width:100%;
     justify-content:center;
+}
+
+ul.menu-entrees, ul.menu-drinks, ul.menu-sides {
+    list-style-type: none;
+    font-size: 1.5rem;
+    max-width:33%;
+}
+
+.results {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.menu-price, .menu-calories {
+    color: slategray;
+    font-size: 1rem;
+}
+
+.menu-description {
+    color: slategray;
+    font-size: .8rem;
+    text-align: center;
+}
+
+.sort-section > div {
+    padding: 10px;
+    justify-content:center;
+}
+
+.checkboxes {
+    padding-top: 20px;
+}
+
+@media (max-width: 500px) {
+    .results {
+        flex-direction: column;
+    }
 }

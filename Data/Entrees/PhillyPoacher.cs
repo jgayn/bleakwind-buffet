@@ -46,6 +46,14 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value> Stores and initializes whether a roll is included in the order to true. </value>
         private bool roll = true;
 
+        /// <summary>
+        /// Gets the description of the item
+        /// </summary>
+        public override string Description
+        {
+            get { return "Cheesesteak sandwich made from grilled sirloin, topped with onions on a fried roll."; }
+        }
+
         /// <value>
         /// Public property for whether or not customer wants sirloin steak.
         /// Can get value or set a new value.

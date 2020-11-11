@@ -11,13 +11,13 @@
 
     <form class="menu">
 
-        <div id="sort-section">
-            <div id="search">
+        <div class="sort-section">
+            <div class="search">
                 <input type="text" name="SearchTerms" value="@Model.SearchTerms" />
                 <input type="submit" value="Search" />
             </div>
 
-            <div id="checkboxes">
+            <div class="checkboxes" style="padding-top:12px">
                 @foreach (string type in ItemFilter.ItemType)
                 {
                     <label>
@@ -27,43 +27,102 @@
                 }
             </div>
 
-            <div id="price-sort">
-                Minimum Price
-                <input name="MinPrice" type="number" min="0" max="10" step=".5" placeholder="min" />
-                Maximum Price
+            <div class="price-sort">
+                Price
+                <input name="MinPrice" type="number" min="0" max="9.99" step=".5" placeholder="min"/>
                 <input name="MaxPrice" type="number" min="0" max="10" step=".5" placeholder="max" />
             </div>
 
-            <div id="calories-sort">
-                Minimum Calories
-                <input name="MinCalories" type="number" min="0" max="1200" step="50" placeholder="min" />
-                Maximum Calories
-                <input name="MaxCalories" type="number" min="0" max="1200" step="50" placeholder="max" />
+            <div class="calories-sort">
+                Calories
+                <input name="MinCalories" type="number" min="0" max="999" step="50" placeholder="min" />
+                <input name="MaxCalories" type="number" min="0" max="1000" step="50" placeholder="max" />
             </div>
         </div>
-        
 
-        <div id="results">
+        <h2 class="title">Menu</h2>
+        <div class="results">
+
             <ul class="menu-entrees">
-                <li>
-                    <h2 class="title">Menu</h2>
-                </li>
+                Entrees
                 @{
                     foreach (Data.IOrderItem d in @Model.Items)
                     {
-                        <li>
-                            <div class="menu-item">
-                                <div class="menu-name">
-                                    @d.ToString()
+                        if (d is Data.Entree)
+                        {
+                            <li>
+                                <div class="menu-item">
+                                    <div class="menu-name">
+                                        @d.ToString()
+                                    </div>
+                                    <div class="menu-description">
+                                        @d.Description
+                                    </div>
+                                    <div class="menu-price">
+                                        $@d.Price
+                                    </div>
+                                    <div class="menu-calories">
+                                        @d.Calories
+                                    </div>
                                 </div>
-                                <div class="menu-price">
-                                    $@d.Price
+                            </li>
+                        }
+                    }
+                }
+            </ul>
+            
+            <ul class="menu-drinks">
+                Drinks
+                @{
+                    foreach (Data.IOrderItem d in @Model.Items)
+                    {
+                        if (d is Data.Drink)
+                        {
+                            <li>
+                                <div class="menu-item">
+                                    <div class="menu-name">
+                                        @d.ToString()
+                                    </div>
+                                    <div class="menu-description">
+                                        @d.Description
+                                    </div>
+                                    <div class="menu-price">
+                                        $@d.Price
+                                    </div>
+                                    <div class="menu-calories">
+                                        @d.Calories
+                                    </div>
                                 </div>
-                                <div class="menu-calories">
-                                    @d.Calories
+                            </li>
+                        }
+                    }
+                }
+            </ul>
+            
+            <ul class="menu-sides">
+                Sides
+                @{
+                    foreach (Data.IOrderItem d in @Model.Items)
+                    {
+                        if (d is Data.Side)
+                        {
+                            <li>
+                                <div class="menu-item">
+                                    <div class="menu-name">
+                                        @d.ToString()
+                                    </div>
+                                    <div class="menu-description">
+                                        @d.Description
+                                    </div>
+                                    <div class="menu-price">
+                                        $@d.Price
+                                    </div>
+                                    <div class="menu-calories">
+                                        @d.Calories
+                                    </div>
                                 </div>
-                            </div>
-                        </li>
+                            </li>
+                        }
                     }
                 }
             </ul>

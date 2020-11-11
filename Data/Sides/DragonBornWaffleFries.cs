@@ -41,6 +41,14 @@ namespace BleakwindBuffet.Data.Sides
             set;
         } = new List<string>();
 
+        /// <summary>
+        /// Gets the description of the item
+        /// </summary>
+        public override string Description
+        {
+            get { return "Crispy fried potato waffle fries."; }
+        }
+
         /// <value>Holds the size of this item</value>
         public override Size Size
         {

@@ -47,6 +47,14 @@ namespace BleakwindBuffet.Data.Entrees
         /// <value> Stores and initializes special instructions for the order to an empty list </value>
         private List<string> specialinstructions = new List<string>();
 
+        /// <summary>
+        /// Gets the description of the item
+        /// </summary>
+        public override string Description
+        {
+            get { return "Put some meat on those bones with a small stack of pancakes. Includes sausage links, eggs, and hash browns on the side. Topped with the syrup of your choice."; }
+        }
+
         /// <value>
         /// Public property for whether or not customer wants sausage.
         /// Can get value or set a new value.

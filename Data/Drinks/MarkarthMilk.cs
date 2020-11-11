@@ -42,6 +42,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value> Stores and initializes the calories of the drink ot that of a small </value>
         private uint calories = 56;
 
+        /// <summary>
+        /// Gets the description of the item
+        /// </summary>
+        public override string Description
+        {
+            get { return "Hormone-free organic 2% milk."; }
+        }
+
         /// <value>
         /// Gets/sets whether the customer wants ICE IN THEIR MILK.
         /// </value>

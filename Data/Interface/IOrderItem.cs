@@ -35,5 +35,13 @@ namespace Data
             get;
             set;
         }
+
+        /// <summary>
+        /// Public property to access description
+        /// </summary>
+        string Description
+        {
+            get;
+        }
     }
 }

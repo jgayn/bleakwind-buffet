@@ -41,6 +41,14 @@ namespace BleakwindBuffet.Data.Drinks
         /// <value> Stores and initializes the calories of the drink ot that of a small </value>
         private uint calories = 44;
 
+        /// <summary>
+        /// Gets the description of the item
+        /// </summary>
+        public override string Description
+        {
+            get { return "Fresh squeezed apple juice."; }
+        }
+
         /// <value>
         /// Gets/sets whether the customer wants ice in their juice.
         /// </value>
